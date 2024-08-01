@@ -75,6 +75,9 @@ button,
   cursor: pointer;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-transition: background-color 0.25s ease-in-out;
+  transition: background-color 0.25s ease-in-out;
+  text-decoration: none;
 }
 button:hover,
 .btn:hover {
@@ -119,11 +122,10 @@ button:hover,
 .nav__right .dropdown:hover span {
   color: #2d6852;
 }
-
-.menu {
+.nav .menu {
+  border-radius: 0;
   width: 76px;
   height: 96px;
-  background-color: #1c352c;
   color: #efe6dd;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -139,9 +141,8 @@ button:hover,
       -ms-flex-align: center;
           align-items: center;
   gap: 8px;
-  cursor: pointer;
 }
-.menu__icon {
+.nav .menu__icon {
   height: 50px;
   width: 50px;
   display: -webkit-box;
@@ -159,30 +160,29 @@ button:hover,
   row-gap: 10px;
   position: relative;
 }
-.menu__icon .stroke {
+.nav .menu__icon .stroke {
   width: 50px;
   height: 1px;
   background: #efe6dd;
 }
-.menu:hover {
-  background-color: #2d6852;
+.nav .menu .stroke {
+  -webkit-transition: top 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: top 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  position: relative;
+  top: 0;
 }
-.menu:hover .stroke {
-  position: absolute;
-  -webkit-transition: -webkit-transform 0.3s ease-in-out;
-  transition: -webkit-transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
-}
-.menu:hover .stroke.left {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-}
-.menu:hover .stroke.right {
+.nav .menu:hover .stroke.left {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
+  top: 5px;
 }
-
+.nav .menu:hover .stroke.right {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  top: -6px;
+}
 .dropdown {
   display: -webkit-box;
   display: -ms-flexbox;
