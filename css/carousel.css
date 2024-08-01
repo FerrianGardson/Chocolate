@@ -7,7 +7,7 @@ body {
     /* padding: 4rem; */
 }
 
-.carousel {
+div.carousel {
     position: relative;
     overflow: hidden;
     width: 300px;
@@ -21,7 +21,7 @@ body {
     background: #00800047;
 }
 
-.carousel .row {
+div.carousel .row {
     display: flex;
     column-gap: 37px;
     transition: transform 0.5s ease-in-out;
@@ -29,7 +29,7 @@ body {
     flex-shrink: 0;
 }
 
-.carousel .card {
+div.carousel .card {
     width: 362px;
     height: 407px;
     background: #f5f5f5;
@@ -41,13 +41,13 @@ body {
     flex-shrink: 0;
 }
 
-.carousel .position.bullets {
+div.carousel .position.bullets {
     display: flex;
     gap: 5px;
     flex-direction: row;
 }
 
-.carousel .bullet {
+div.carousel .bullet {
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -55,22 +55,22 @@ body {
     cursor: pointer;
 }
 
-.carousel .bullet.active {
+div.carousel .bullet.active {
     background-color: #333;
 }
 
-.carousel .position.numbers {
+div.carousel .position.numbers {
     top: 20px;
     right: 20px;
     font-size: 16px;
     color: #333;
 }
 
-.carousel .position.numbers span {
+div.carousel .position.numbers span {
     /* margin: 0 5px; */
 }
 
-button.carousel-button {
+buttondiv.carousel-button {
     width: 30px;
     height: 30px;
     border-radius: 15px;
@@ -78,20 +78,20 @@ button.carousel-button {
     background: #c7c7c7;
 }
 
-button.carousel-button:hover{
+buttondiv.carousel-button:hover{
     background:gray;
 }
 
-button.carousel-button:disabled{
+buttondiv.carousel-button:disabled{
     background:#eaeaea;
 }
 
-button.carousel-button.right svg {
+buttondiv.carousel-button.right svg {
     position:relative;
     left:1px;
 }
 
-button.carousel-button.left svg {
+buttondiv.carousel-button.left svg {
     position:relative;
     right:1px;
 }
@@ -110,6 +110,6 @@ button.carousel-button.left svg {
     column-gap: 5px;
 }
 
-.carousel .row {
+div.carousel .row {
     background: #ff000073;
 }
