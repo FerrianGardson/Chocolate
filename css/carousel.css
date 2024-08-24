@@ -14,11 +14,11 @@ div.carousel {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    row-gap: 1rem;
+    /* row-gap: 1rem; */
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    background: #00800047;
+    /* background: #00800047; */
 }
 
 div.carousel .row {
@@ -33,12 +33,15 @@ div.carousel .card {
     width: 362px;
     height: 407px;
     background: #f5f5f5;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
+    flex-direction: column;
+    row-gap: 24px;
+    align-content: center;
 }
 
 div.carousel .position.bullets {
@@ -51,19 +54,20 @@ div.carousel .bullet {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #ccc;
+    /* background-color: #ccc; */
     cursor: pointer;
 }
 
 div.carousel .bullet.active {
-    background-color: #333;
+    /* background-color: #333; */
 }
 
 div.carousel .position.numbers {
-    top: 20px;
-    right: 20px;
-    font-size: 16px;
-    color: #333;
+    /* top: 20px; */
+    /* right: 20px; */
+    /* font-size: 16px; */
+    /* color: #333; */
+    gap: 12px;
 }
 
 div.carousel .position.numbers span {
@@ -111,5 +115,5 @@ buttondiv.carousel-button.left svg {
 }
 
 div.carousel .row {
-    background: #ff000073;
+    /* background: #ff000073; */
 }
