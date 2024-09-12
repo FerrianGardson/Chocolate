@@ -60,6 +60,9 @@ button,
   justify-content: center;
 }
 
+
+
+
 // FG
 
 section.fg {
@@ -82,7 +85,8 @@ section.fg {
     border-radius: 4px;
   }
 
-  .content.row.spread, .disclaimer {
+  .content.row.spread,
+  .disclaimer {
     display: flex;
     justify-content: space-between;
     max-width: 1180px;
@@ -94,9 +98,9 @@ section.fg {
     background: #ffffb4;
     padding: 1rem;
     box-sizing: border-box;
-    margin-bottom: 1rem!important;
+    margin-bottom: 1rem !important;
     border-radius: 4px;
-}
+  }
 
   .row {
     display: flex;
@@ -112,11 +116,9 @@ section.fg {
   a.phone {
     position: relative;
     top: 1px;
-}
+  }
 
 }
-
-
 
 
 
@@ -220,8 +222,7 @@ section.fg {
       }
     }
 
-    &__title {
-    }
+    &__title {}
   }
 }
 
@@ -405,7 +406,12 @@ section.promotions {
   .carousel {
     .card {
       width: $content-width;
-      position:relative;
+      position: relative;
+      max-width: 100vw;
+    }
+
+    .row {
+      max-width: 100vw;
     }
 
     .position.bullets .bullet {
@@ -439,26 +445,26 @@ section.promotions {
       .label,
       .title {
         text-transform: uppercase;
-        margin:0px;
+        margin: 0px;
       }
 
       p.subtitle {
         width: 448px;
-        line-height: 148%!important;
+        line-height: 148% !important;
         margin-bottom: 52px;
-    }
-    
-    p.label {
-        margin-bottom: 20px!important;
-    }
-    
-    p.title {
-        margin-bottom: 24px!important;
-    }
-    
-    a.btn.large {
+      }
+
+      p.label {
+        margin-bottom: 20px !important;
+      }
+
+      p.title {
+        margin-bottom: 24px !important;
+      }
+
+      a.btn.large {
         width: fit-content;
-    }
+      }
 
 
 
