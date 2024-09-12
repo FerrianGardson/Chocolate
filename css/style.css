@@ -103,6 +103,62 @@ button:hover,
           justify-content: center;
 }
 
+section.fg {
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.831372549);
+  /* position: fixed; */
+  z-index: 99;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+}
+section.fg a:not(.button) {
+  color: white;
+  text-decoration: none;
+}
+section.fg a.button {
+  background: #a32828;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  color: white;
+  border-radius: 4px;
+}
+section.fg .content.row.spread, section.fg .disclaimer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 1180px;
+  margin: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+section.fg .disclaimer {
+  background: #ffffb4;
+  padding: 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-bottom: 1rem !important;
+  border-radius: 4px;
+}
+section.fg .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+section.fg svg {
+  position: relative;
+  top: 3px;
+  right: 6px;
+}
+section.fg a.phone {
+  position: relative;
+  top: 1px;
+}
+
 .nav {
   background-color: #f6ece3;
   border-bottom: 1px solid #41362f;

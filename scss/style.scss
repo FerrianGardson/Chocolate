@@ -60,6 +60,75 @@ button,
   justify-content: center;
 }
 
+// FG
+
+section.fg {
+  padding: 1rem;
+  background: #000000d4;
+  /* position: fixed; */
+  z-index: 99;
+  backdrop-filter: blur(4px);
+
+  a:not(.button) {
+    color: white;
+    text-decoration: none;
+  }
+
+  a.button {
+    background: #a32828;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    color: white;
+    border-radius: 4px;
+  }
+
+  .content.row.spread, .disclaimer {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1180px;
+    margin: auto;
+    align-items: center;
+  }
+
+  .disclaimer {
+    background: #ffffb4;
+    padding: 1rem;
+    box-sizing: border-box;
+    margin-bottom: 1rem!important;
+    border-radius: 4px;
+}
+
+  .row {
+    display: flex;
+    gap: 1rem;
+  }
+
+  svg {
+    position: relative;
+    top: 3px;
+    right: 6px;
+  }
+
+  a.phone {
+    position: relative;
+    top: 1px;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Навигация
 
 .nav {

@@ -138,18 +138,85 @@ document.addEventListener("DOMContentLoaded", function () {
         updateCarousel();
       });
 
-      // Автоматическое перемещение вправо каждые 4 секунды только для каруселей с классом .cycled
-      if (carouselContainer.classList.contains("cycled")) {
-        setInterval(function () {
-          // Проверка на конец карусели и возврат к началу
-          if (currentIndex + cardsPerView < totalCards) {
-            currentIndex += cardsPerView; // Переход к следующему набору карточек
-          } else {
-            currentIndex = 0; // Переход на первую карточку
-          }
-          updateCarousel();
-        }, 4000);
+
+
+
+
+
+
+// Автоматическое перемещение вправо каждые 4 секунды только для каруселей с классом .cycled
+if (carouselContainer.classList.contains("cycled")) {
+  let autoScrollInterval;
+  let pauseTimeout;
+
+  // Функция для запуска автопрокрутки
+  function startAutoScroll() {
+    autoScrollInterval = setInterval(function () {
+      // Проверка на конец карусели и возврат к началу
+      if (currentIndex + cardsPerView < totalCards) {
+        currentIndex += cardsPerView; // Переход к следующему набору карточек
+      } else {
+        currentIndex = 0; // Переход на первую карточку
       }
+      updateCarousel();
+    }, 4000);
+  }
+
+  // Функция для остановки автопрокрутки
+  function stopAutoScroll() {
+    clearInterval(autoScrollInterval);
+    clearTimeout(pauseTimeout); // Очистка предыдущего таймера паузы, если он был
+    // Возобновляем автопрокрутку через 10 секунд после клика
+    pauseTimeout = setTimeout(startAutoScroll, 10000);
+  }
+
+  // Инициализация автопрокрутки
+  startAutoScroll();
+
+  // Остановка автопрокрутки при клике по карточке или её содержимому
+  const cards = carousel.querySelectorAll(".card");
+
+  cards.forEach(card => {
+    card.addEventListener("click", function() {
+      stopAutoScroll(); // Приостанавливаем прокрутку на 10 секунд
+    });
+  });
+}
+
+
+
+
+
+
+// Привязка обработчиков к карточкам
+const cards = carousel.querySelectorAll(".card");
+
+cards.forEach(card => {
+  card.addEventListener("click", function(event) {
+    // Проверяем, что клик был непосредственно по самой карточке, а не по её содержимому
+    if (event.target === event.currentTarget) {
+      const cardRect = card.getBoundingClientRect();
+      const clickX = event.clientX - cardRect.left;
+
+      const leftBoundary = cardRect.width * 0.2;  // Левая 20% ширина
+      const rightBoundary = cardRect.width * 0.8; // Правая 20% ширина
+
+      if (clickX < leftBoundary) {
+        // Клик по левой 20% части карточки — прокрутка влево
+        showPrevRow();
+      } else if (clickX > rightBoundary) {
+        // Клик по правой 20% части карточки — прокрутка вправо
+        showNextRow();
+      }
+    }
+  });
+});
+
+
+
+
+
+
     });
   });
 });
