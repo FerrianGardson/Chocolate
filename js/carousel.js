@@ -4,12 +4,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     rows.forEach((carousel) => {
       // Кнопки и позиционные элементы
-      const prevButtons = carouselContainer.querySelectorAll(".carousel-button.left");
-      const nextButtons = carouselContainer.querySelectorAll(".carousel-button.right");
-      const currentPositions = carouselContainer.querySelectorAll(".position .current");
-      const totalPositions = carouselContainer.querySelectorAll(".position .total");
-      const numbersContainer = carouselContainer.querySelector(".position.numbers");
-      const bulletsContainer = carouselContainer.querySelector(".position.bullets");
+      const prevButtons = carouselContainer.querySelectorAll(
+        ".carousel-button.left"
+      );
+      const nextButtons = carouselContainer.querySelectorAll(
+        ".carousel-button.right"
+      );
+      const currentPositions =
+        carouselContainer.querySelectorAll(".position .current");
+      const totalPositions =
+        carouselContainer.querySelectorAll(".position .total");
+      const numbersContainer =
+        carouselContainer.querySelector(".position.numbers");
+      const bulletsContainer =
+        carouselContainer.querySelector(".position.bullets");
 
       let cardWidth = carouselContainer.querySelector(".card").offsetWidth; // Ширина одной карточки
       let carouselWidth = carouselContainer.offsetWidth; // Ширина карусели
@@ -23,28 +31,37 @@ document.addEventListener("DOMContentLoaded", function () {
       function updateCarousel() {
         // Расчёт смещения для показа нужных карточек
         const offset = -(currentIndex * (cardWidth + gap)); // Смещение в пикселях
-        console.log('gap', gap);
-        console.log('offset', offset);
+        console.log("gap", gap);
+        console.log("offset", offset);
         carousel.style.transform = `translateX(${offset}px)`; // Применение смещения
 
         const endIndex = Math.min(currentIndex + cardsPerView, totalCards); // Последняя видимая карточка
-        currentPositions.forEach(position => position.textContent = endIndex);
-        totalPositions.forEach(position => position.textContent = totalCards);
+        currentPositions.forEach(
+          (position) => (position.textContent = endIndex)
+        );
+        totalPositions.forEach(
+          (position) => (position.textContent = totalCards)
+        );
 
         // Обновляем позиционные кружки и номера
         updateBullets();
         updateNumbers();
 
         // Активация или деактивация кнопок
-        prevButtons.forEach(button => button.disabled = currentIndex === 0);
-        nextButtons.forEach(button => button.disabled = endIndex >= totalCards);
+        prevButtons.forEach((button) => (button.disabled = currentIndex === 0));
+        nextButtons.forEach(
+          (button) => (button.disabled = endIndex >= totalCards)
+        );
       }
 
       // Функция для обновления числового счётчика
       function updateNumbers() {
         if (numbersContainer) {
           // Обновление счётчика
-          numbersContainer.querySelector(".current").textContent = Math.min(currentIndex + cardsPerView, totalCards);
+          numbersContainer.querySelector(".current").textContent = Math.min(
+            currentIndex + cardsPerView,
+            totalCards
+          );
           numbersContainer.querySelector(".total").textContent = totalCards;
         }
       }
@@ -60,7 +77,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
           for (let i = 0; i < totalBullets; i++) {
             const bullet = document.createElement("div");
-            bullet.className = i === Math.floor(currentIndex / cardsPerView) ? "bullet active" : "bullet";
+            bullet.className =
+              i === Math.floor(currentIndex / cardsPerView)
+                ? "bullet active"
+                : "bullet";
 
             bullet.addEventListener("click", () => {
               currentIndex = i * cardsPerView; // Переход к выбранной позиции
@@ -92,8 +112,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       // Привязка обработчиков событий к кнопкам
-      nextButtons.forEach(button => button.addEventListener("click", showNextRow));
-      prevButtons.forEach(button => button.addEventListener("click", showPrevRow));
+      nextButtons.forEach((button) =>
+        button.addEventListener("click", showNextRow)
+      );
+      prevButtons.forEach((button) =>
+        button.addEventListener("click", showPrevRow)
+      );
 
       updateCarousel(); // Инициализация карусели
 
@@ -116,7 +140,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Автоматическое перемещение вправо каждые 4 секунды только для каруселей с классом .cycled
       if (carouselContainer.classList.contains("cycled")) {
-        setInterval(showNextRow, 4000);
+        setInterval(function () {
+          // Проверка на конец карусели и возврат к началу
+          if (currentIndex + cardsPerView < totalCards) {
+            currentIndex += cardsPerView; // Переход к следующему набору карточек
+          } else {
+            currentIndex = 0; // Переход на первую карточку
+          }
+          updateCarousel();
+        }, 4000);
       }
     });
   });

@@ -88,6 +88,7 @@ button,
     .dropdown {
       margin-right: 24px;
     }
+
     .dropdown:last-of-type {
       margin-right: 30px;
     }
@@ -96,6 +97,7 @@ button,
       path.marker {
         fill: $green-light;
       }
+
       span {
         color: $green-light;
       }
@@ -253,7 +255,7 @@ button,
   line-height: 100%;
 }
 
-section.carousel {
+section.news-carousel {
   padding-top: 80px;
   padding-bottom: 90px;
   background-color: $green;
@@ -262,7 +264,7 @@ section.carousel {
     text-align: left;
     color: $white-text;
     align-self: flex-start;
-    margin-top:0;
+    margin-top: 0;
   }
 
   .position.numbers {
@@ -309,7 +311,7 @@ section.carousel {
     }
 
     .btn {
-      background-color: #41362F;
+      background-color: #41362f;
 
       &:hover {
         background-color: #643a22;
@@ -318,22 +320,95 @@ section.carousel {
   }
 
   .row {
-    margin-top:40px;
+    margin-top: 40px;
   }
 
   .position.bullets {
-    margin-top:20px;
+    margin-top: 20px;
   }
 }
 
 section.promotions {
-  padding-top:80px;
-  padding-bottom:90px;
-  background-color:$white-bg;
-  
+  padding-top: 80px;
+  padding-bottom: 90px;
+  background-color: $white-bg;
+
   .carousel {
-  .card {
-    width:$content-width;
+    .card {
+      width: $content-width;
+      position:relative;
+    }
+
+    .position.bullets .bullet {
+      background: #dedede;
+      width: 64px;
+      height: 4px;
+      border-radius: 4px;
+    }
+
+    .position.bullets .bullet.active {
+      background: #1c352c;
+    }
+
+    .position.bullets {
+      margin-top: 24px;
+    }
+
+    p {
+      color: white;
+      text-align: left;
+      line-height: 1em;
+    }
+
+    .text {
+      position: absolute;
+      left: 102px;
+      top: 88px;
+      display: flex;
+      flex-direction: column;
+
+      .label,
+      .title {
+        text-transform: uppercase;
+        margin:0px;
+      }
+
+      p.subtitle {
+        width: 448px;
+        line-height: 148%!important;
+        margin-bottom: 52px;
+    }
+    
+    p.label {
+        margin-bottom: 20px!important;
+    }
+    
+    p.title {
+        margin-bottom: 24px!important;
+    }
+    
+    a.btn.large {
+        width: fit-content;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
   }
-}
 }

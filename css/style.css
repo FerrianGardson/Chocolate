@@ -330,43 +330,43 @@ button:hover,
   line-height: 100%;
 }
 
-section.carousel {
+section.news-carousel {
   padding-top: 80px;
   padding-bottom: 90px;
   background-color: #1c352c;
 }
-section.carousel h2.title {
+section.news-carousel h2.title {
   text-align: left;
   color: #efe6dd;
   -ms-flex-item-align: start;
       align-self: flex-start;
   margin-top: 0;
 }
-section.carousel .position.numbers {
+section.news-carousel .position.numbers {
   position: absolute;
   right: 0;
   top: 0;
 }
-section.carousel button.carousel-button {
+section.news-carousel button.carousel-button {
   background: #41362f;
   height: 48px;
   width: 72px;
 }
-section.carousel .counter {
+section.news-carousel .counter {
   color: white;
 }
-section.carousel .bullet {
+section.news-carousel .bullet {
   background-color: rgba(255, 255, 255, 0.4392156863);
 }
-section.carousel .bullet.active {
+section.news-carousel .bullet.active {
   background-color: white;
 }
-section.carousel .card {
+section.news-carousel .card {
   padding: 38px 24px;
   border-radius: 10px;
 }
-section.carousel .card .title,
-section.carousel .card .subtitle {
+section.news-carousel .card .title,
+section.news-carousel .card .subtitle {
   margin: 0;
   color: #41362f;
   font-size: 18px;
@@ -376,19 +376,19 @@ section.carousel .card .subtitle {
       align-self: center;
   margin-bottom: 6px;
 }
-section.carousel .card .title {
+section.news-carousel .card .title {
   font-size: 24px;
 }
-section.carousel .card .btn {
-  background-color: #41362F;
+section.news-carousel .card .btn {
+  background-color: #41362f;
 }
-section.carousel .card .btn:hover {
+section.news-carousel .card .btn:hover {
   background-color: #643a22;
 }
-section.carousel .row {
+section.news-carousel .row {
   margin-top: 40px;
 }
-section.carousel .position.bullets {
+section.news-carousel .position.bullets {
   margin-top: 20px;
 }
 
@@ -399,4 +399,55 @@ section.promotions {
 }
 section.promotions .carousel .card {
   width: 1160px;
+  position: relative;
+}
+section.promotions .carousel .position.bullets .bullet {
+  background: #dedede;
+  width: 64px;
+  height: 4px;
+  border-radius: 4px;
+}
+section.promotions .carousel .position.bullets .bullet.active {
+  background: #1c352c;
+}
+section.promotions .carousel .position.bullets {
+  margin-top: 24px;
+}
+section.promotions .carousel p {
+  color: white;
+  text-align: left;
+  line-height: 1em;
+}
+section.promotions .carousel .text {
+  position: absolute;
+  left: 102px;
+  top: 88px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+section.promotions .carousel .text .label,
+section.promotions .carousel .text .title {
+  text-transform: uppercase;
+  margin: 0px;
+}
+section.promotions .carousel .text p.subtitle {
+  width: 448px;
+  line-height: 148% !important;
+  margin-bottom: 52px;
+}
+section.promotions .carousel .text p.label {
+  margin-bottom: 20px !important;
+}
+section.promotions .carousel .text p.title {
+  margin-bottom: 24px !important;
+}
+section.promotions .carousel .text a.btn.large {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }/*# sourceMappingURL=style.css.map */
