@@ -121,22 +121,116 @@ document.addEventListener("DOMContentLoaded", function () {
 
       updateCarousel(); // Инициализация карусели
 
-      // Обновление карусели при изменении размера окна
-      window.addEventListener("resize", function () {
-        cardWidth = carouselContainer.querySelector(".card").offsetWidth; // Обновление ширины карточки
-        carouselWidth = carouselContainer.offsetWidth; // Обновление ширины карусели
-        gap = parseInt(getComputedStyle(carousel).gap) || 0; // Обновление зазора между карточками
-        cardsPerView = Math.floor((carouselWidth + gap) / (cardWidth + gap)); // Пересчёт видимых карточек
-        const offset = -(currentIndex * (cardWidth + gap)); // Пересчёт смещения
 
-        carousel.style.transition = "none"; // Отключаем анимацию
-        carousel.style.transform = `translateX(${offset}px)`; // Применение нового смещения
-        setTimeout(() => {
-          carousel.style.transition = ""; // Включаем анимацию
-        }, 0);
 
-        updateCarousel();
-      });
+
+
+
+
+
+
+      
+
+// Обновление карусели при изменении размера окна
+window.addEventListener("resize", function () {
+  console.log("=== Window resize event triggered ===");
+
+  // Обновление ширины карточки
+  cardWidth = carouselContainer.querySelector(".card").offsetWidth;
+  console.log("Updated cardWidth:", cardWidth);
+
+  // Обновление ширины карусели
+  carouselWidth = carouselContainer.offsetWidth;
+  console.log("Updated carouselWidth:", carouselWidth);
+
+  // Обновление зазора между карточками
+  gap = parseInt(getComputedStyle(carousel).columnGap) || 0;
+  console.log("Updated gap between cards:", gap);
+
+  // Пересчёт видимых карточек с учётом новой ширины карусели и карточек
+  cardsPerView = Math.max(1, Math.floor((carouselWidth + gap) / (cardWidth + gap))); // Добавил Math.max, чтобы минимальное количество карточек было 1
+  console.log("Updated cardsPerView:", cardsPerView);
+
+  // Ограничиваем индекс, если он выходит за пределы видимых карточек
+  currentIndex = Math.min(currentIndex, totalCards - cardsPerView);
+  console.log("Updated currentIndex after resize:", currentIndex);
+
+  // Пересчёт смещения для карусели
+  const offset = -(currentIndex * (cardWidth + gap));
+  console.log("Calculated offset:", offset);
+
+  // Применение нового смещения без анимации
+  carousel.style.transition = "none";
+  carousel.style.transform = `translateX(${offset}px)`;
+  console.log("Applied transform with offset");
+
+  // Включаем анимацию снова с небольшой задержкой
+  setTimeout(() => {
+    carousel.style.transition = ""; // Включаем анимацию обратно
+    console.log("Re-enabled transition after resize");
+  }, 100);
+
+  // Обновляем карусель с новыми параметрами
+  updateCarousel();
+  console.log("Carousel updated after resize");
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
