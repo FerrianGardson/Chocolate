@@ -307,7 +307,7 @@ section.fg a.phone {
 .hero {
   padding-top: 50px;
   padding-bottom: 50px;
-  background-image: url(/img/hero-bg.jpg);
+  background-image: url(img/hero-bg.jpg);
   background-size: cover;
 }
 .hero .subtitle {
@@ -345,7 +345,7 @@ section.fg a.phone {
   position: absolute;
   top: -32px;
   right: -56px;
-  background-image: url(/img/label.png);
+  background-image: url(img/label.png);
 }
 .hero .row {
   display: -webkit-box;
