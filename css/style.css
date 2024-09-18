@@ -122,7 +122,8 @@ section.fg a.button {
   color: white;
   border-radius: 4px;
 }
-section.fg .content.row.spread, section.fg .disclaimer {
+section.fg .content.row.spread,
+section.fg .disclaimer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -157,6 +158,11 @@ section.fg svg {
 section.fg a.phone {
   position: relative;
   top: 1px;
+}
+
+body, section {
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .nav {
@@ -345,7 +351,7 @@ section.fg a.phone {
   position: absolute;
   top: -32px;
   right: -56px;
-  background-image: url(../img/label.png);
+  background-image: url(img/label.png);
 }
 .hero .row {
   display: -webkit-box;
@@ -456,6 +462,10 @@ section.promotions {
 section.promotions .carousel .card {
   width: 1160px;
   position: relative;
+  max-width: 100vw;
+}
+section.promotions .carousel .row {
+  max-width: 100vw;
 }
 section.promotions .carousel .position.bullets .bullet {
   background: #dedede;
