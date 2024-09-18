@@ -15,11 +15,10 @@ $content-width: 1160px;
   -moz-border-radius: $radius;
   border-radius: $radius;
 }
-
 html {
   font-family: "Mulish", sans-serif;
 }
-
+ 
 .wrap-content {
   max-width: $content-width;
   margin: 0 auto;
